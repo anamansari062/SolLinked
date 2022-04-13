@@ -59,7 +59,37 @@ pub mod sol_linked {
         post.tag = tag;
 
         Ok(())
-}
+    }
+
+    pub fn update_post(ctx: Context<UpdatePost>, tag: String, title: String, content: String) -> Result<()> {
+        let post: &mut Account<Post> = &mut ctx.accounts.post;
+
+        if title.chars().count() < 1 {
+            return Err(error!(ErrorCode::TitleEmpty))
+        }
+
+        if title.chars().count() > 50 {
+            return Err(error!(ErrorCode::TitleTooLong))
+        }
+
+        if content.chars().count() < 1 {
+            return Err(error!(ErrorCode::ContentEmpty))
+        }
+
+        if content.chars().count() > 300 {
+            return Err(error!(ErrorCode::ContentTooLong))
+        }
+
+        if tag.chars().count() > 20 {
+            return Err(error!(ErrorCode::TagTooLong))
+        }
+        
+        post.title = title;
+        post.content = content;
+        post.tag = tag;
+
+        Ok(())
+    }
 }
 
 #[account]
@@ -71,6 +101,13 @@ pub struct Post {
     pub title: String,
     pub content: String,
     
+}
+
+#[derive(Accounts)]
+pub struct UpdatePost<'info> {
+    #[account(mut, has_one = author)]
+    pub post: Account<'info, Post>,
+    pub author: Signer<'info>,
 }
 
 #[derive(Accounts)]

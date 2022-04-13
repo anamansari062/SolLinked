@@ -7,15 +7,16 @@ import { useWallet } from 'solana-wallets-vue'
 
 // Props.
 const props = defineProps({
-    forcedTopic: String,
+    forcedTag: String,
 })
-const { forcedTopic } = toRefs(props)
+const { forcedTag } = toRefs(props)
 
 // Form data.
 const content = ref('')
-const topic = ref('')
-const slugTopic = useSlug(topic)
-const effectiveTopic = computed(() => forcedTopic.value ?? slugTopic.value)
+const tag = ref('')
+const title = ref('')
+const slugTag = useSlug(tag)
+const effectiveTag= computed(() => forcedTag.value ?? slugTag.value)
 
 // Auto-resize the content's textarea.
 const textarea = ref()
@@ -37,9 +38,10 @@ const canPost = computed(() => content.value && characterLimit.value > 0)
 const emit = defineEmits(['added'])
 const send = async () => {
     if (! canPost.value) return
-    const post = await sendPost(effectiveTopic.value, content.value)
+    const post = await sendPost(effectiveTag.value, title.value, content.value)
     emit('added', post)
-    topic.value = ''
+    tag.value = ''
+    title.value = ''
     content.value = ''
 }
 </script>
@@ -73,12 +75,12 @@ const send = async () => {
                     type="text"
                     placeholder="tags"
                     class="text-pink-500 rounded-full pl-10 pr-4 py-2 bg-gray-100"
-                    :value="effectiveTopic"
-                    :disabled="forcedTopic"
-                    @input="topic = $event.target.value"
+                    :value="effectiveTag"
+                    :disabled="forcedTag"
+                    @input="tag = $event.target.value"
                 >
                 <div class="absolute left-0 inset-y-0 flex pl-3 pr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" :class="effectiveTopic ? 'text-pink-500' : 'text-gray-400'" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" :class="effectiveTag? 'text-pink-500' : 'text-gray-400'" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z" clip-rule="evenodd" />
                     </svg>
                 </div>

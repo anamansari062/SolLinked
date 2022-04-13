@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { fetchPosts, topicFilter } from '@/api'
+import { fetchPosts, tagFilter } from '@/api'
 import { useSlug, useFromRoute } from '@/composables'
 import PostForm from '@/components/PostForm'
 import PostList from '@/components/PostList'
@@ -24,7 +24,7 @@ const fetchTopicPosts = async () => {
     if (slugTopic.value === viewedTopic.value) return
     try {
         loading.value = true
-        const fetchedPosts = await fetchPosts([topicFilter(slugTopic.value)])
+        const fetchedPosts = await fetchPosts([tagFilter(slugTopic.value)])
         posts.value = fetchedPosts
         viewedTopic.value = slugTopic.value
     } finally {

@@ -2,9 +2,9 @@ import { computed } from 'vue'
 import { useAnchorWallet } from 'solana-wallets-vue'
 import { Connection, PublicKey } from '@solana/web3.js'
 import { Provider, Program } from '@project-serum/anchor'
-import idl from '@/idl/solana_twitter.json'
+import idl from '@/idl/sol_linked.json'
 
-const clusterUrl = "https://api.localnet.solana.com"
+const clusterUrl = "http://127.0.0.1:8899"
 const preflightCommitment = 'processed'
 const commitment = 'processed'
 const programID = new PublicKey(idl.metadata.address)

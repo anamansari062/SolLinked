@@ -4,7 +4,7 @@ export default [{
         component: require('@/components/PageFeed').default,
     },
     {
-        name: 'Find Topics',
+        name: 'Topics',
         path: '/topics/:topic?',
         component: require('@/components/PageTag').default,
     },

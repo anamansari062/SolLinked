@@ -47,9 +47,10 @@ const isEditing = ref(false)
                 </button>
             </div>
         </div>
+        <p class="whitespace-pre-wrap break-all" v-text="post.title"></p>
         <p class="whitespace-pre-wrap break-all" v-text="post.content"></p>
-        <router-link v-if="post.topic" :to="{ name: 'Topics', params: { topic: post.topic } }" class="inline-block mt-2 text-pink-500 hover:underline">
-            #{{ post.topic }}
+        <router-link v-if="post.topic" :to="{ name: 'Tag', params: { tag: post.tag } }" class="inline-block mt-2 text-pink-500 hover:underline">
+            #{{ post.tag }}
         </router-link>
     </div>
 </template>
