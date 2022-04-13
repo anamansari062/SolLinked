@@ -3,3 +3,7 @@ node_modules/
 /env
 /migrations/
 /.anchor/
+/.DS_Store
+/programs/.DS_Store
+/programs/src/.DS_Store
+/test-ledger
