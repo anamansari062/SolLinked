@@ -1,8 +1,13 @@
-<img src ="app/src/assets/logo.png" align="center" hspace="250" vspace="10">
+<h1 align="center">SolLinked</h1>
 
-<b>SolLinked</b> is a decentralised application (dApp) that makes it simple to submit your achievements on the Solana Blockchain. It supports two wallets, each of which offers a simple way to complete a transaction. You can easily post and update your achievement on SolLinked. It provides three sections i.e. Title, Content and Tag to describe our achievement.
+<img src ="app/src/assets/logo.png" align="left"
+width="200" hspace="10" vspace="10">
 
-<br/>Currently the dApp in deployed on Devnet and Vercel.
+SolLinked is a decentralised application (dApp) that makes it simple to submit your achievements on the Solana Blockchain. It supports two wallets, each of which offers a simple way to complete a transaction. You can easily post and update your achievement on SolLinked. It provides three sections i.e. Title, Content and Tag to describe our achievement. 
+
+Note: Currently the dApp in deployed on Devnet and Vercel.
+<br></br>
+<br></br>
 
 ## What it does :
 - Users may log in to the app by connecting their wallet. 
@@ -10,9 +15,10 @@
 - Users will be able to read tweets even if they are not signed in. 
 - Topics may also be searched using tags, and users can be found by their wallet ID. 
 - In the Profile area, you may also see your own posts.
-### Collage/Screenshots
 
-<img src ="src/assets/logo.png" align="center">
+### Screenshot
+
+<img src ="app/src/assets/output.png" align="center">
 
 ## 👇 Prerequisites
 
@@ -20,6 +26,7 @@ Before installation, please make sure you have already installed the following t
 - [Solana](https://docs.solana.com/cli/install-solana-cli-tools) 
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Yarn](https://project-serum.github.io/anchor/getting-started/installation.html#install-yarn_)
+- [Anchor](https://github.com/project-serum/anchor)
 
 some other optional prerequisites if you are interested in contributing.
 - [Git](https://git-scm.com/downloads)
@@ -50,3 +57,6 @@ features to add in the project, kindly follow same procedure for it too.
 ## 🛡️ License
 
 SolLinked is licensed under the MIT License - see the [`LICENSE`](LICENSE.txt) file for more information.
+
+## 🙏 Support
+Do ⭐️ the project if you like it :)
