@@ -4,7 +4,7 @@ import { Connection, PublicKey } from '@solana/web3.js'
 import { Provider, Program } from '@project-serum/anchor'
 import idl from '@/idl/sol_linked.json'
 
-const clusterUrl = "http://127.0.0.1:8899"
+const clusterUrl = "https://api.devnet.solana.com"
 const preflightCommitment = 'processed'
 const commitment = 'processed'
 const programID = new PublicKey(idl.metadata.address)
