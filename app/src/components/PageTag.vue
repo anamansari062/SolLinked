@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { fetchPosts, tagFilter } from '@/api'
 import { useSlug, useFromRoute } from '@/composables'
-import PostForm from '@/components/PostForm'
 import PostList from '@/components/PostList'
 import PostSearch from '@/components/PostSearch'
 
@@ -32,7 +31,7 @@ const fetchTopicPosts = async () => {
     }
 }
 
-const addPost = post => posts.value.push(post)
+// const addPost = post => posts.value.push(post)
 
 // Router hooks.
 useFromRoute((route) => {
@@ -55,7 +54,6 @@ useFromRoute((route) => {
         </template>
     </post-search>
     <div v-if="viewedTopic">
-        <post-form @added="addPost" :forced-topic="viewedTopic"></post-form>
         <post-list :posts="posts" :loading="loading"></post-list>
         <div v-if="posts.length === 0" class="p-8 text-gray-500 text-center">
             No posts were found in this topic...
