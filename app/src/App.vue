@@ -33,7 +33,7 @@ initWorkspace()
         <!-- Main -->
         <main class="flex-1 border-r border-l ml-20 md:ml-64 min-h-screen">
             <header class="flex space-x-6 items-center justify-between px-8 py-4 border-b">
-                <div class="text-xl text-blue-700 font-bold" v-text="heading"></div>
+                <div class="text-xl text-blue-700 font-bold w-full focus:outline-none resize-none mb-3" v-text="heading"></div>
                 <div class="text-xl text-blue-700 font-bold">
                     <wallet-multi-button></wallet-multi-button>
                 </div>

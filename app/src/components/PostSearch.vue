@@ -15,7 +15,7 @@ const { modelValue, placeholder, disabled } = toRefs(props)
     <div class="relative border-b">
         <input
             type="text"
-            class="text-gray-700 w-full pl-16 pr-32 py-4 bg-gray-50"
+            class="text-gray-400 w-full pl-16 pr-32 py-4 bg-gray-100"
             :placeholder="placeholder"
             :value="modelValue"
             @input="emit('update:modelValue', $event.target.value)"

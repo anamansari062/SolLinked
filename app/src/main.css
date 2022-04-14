@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.swv-button-trigger {
+    @apply bg-blue-700 justify-center !important;
+}

@@ -53,7 +53,7 @@ const send = async () => {
         <textarea
             ref="textarea"
             rows="1"
-            class="text-xl w-full focus:outline-none resize-none mb-3"
+            class="text-xl font-bold w-full focus:outline-none resize-none mb-3"
             placeholder="Title"
             v-model="title"
         ></textarea>
@@ -74,13 +74,13 @@ const send = async () => {
                 <input
                     type="text"
                     placeholder="tags"
-                    class="text-blue-700 rounded-full pl-10 pr-4 py-2 bg-gray-100"
+                    class="text-purple rounded-full pl-10 pr-4 py-2 bg-gray-100"
                     :value="effectiveTag"
                     :disabled="forcedTag"
                     @input="tag = $event.target.value"
                 >
                 <div class="absolute left-0 inset-y-0 flex pl-3 pr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" :class="effectiveTag? 'text-blue-700' : 'text-gray-400'" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" :class="effectiveTag? 'text-purple' : 'text-gray-400'" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z" clip-rule="evenodd" />
                     </svg>
                 </div>
@@ -104,7 +104,7 @@ const send = async () => {
         </div>
     </div>
 
-    <div v-else class="px-8 py-4 bg-gray-50 text-gray-500 text-center border-b">
+    <div v-else class="px-8 py-4 bg-gray text-gray-500 text-center border-b">
         Connect your wallet to start posting...
     </div>
 </template>
